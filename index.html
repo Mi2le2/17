@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Форма</title>
+</head>
+<body>
+    <div class="container">
+        
+
+        <!-- Форма -->
+        <div class="form">
+            <form action="" onsubmit="addCard()">
+                <select name="bank-name" onchange="changeBankImg()">
+                    <option value="" disabled>Название банка</option>
+                    <option value="1">Сбербанк</option>
+                    <option value="2">Альфа-Банк</option>
+                    <option value="3">Банк Открытие</option>
+                    <option value="4">Тинькофф Банк</option>
+                    <option value="5">ВТБ</option>
+                </select>
+
+                <select name="payment-system-name" onchange="changePaymentImg()">
+                    <option value="" disabled>Платежная система</option>
+                    <option value="1">Visa</option>
+                    <option value="2">MasterCard</option>
+                    <option value="3">Мир</option>
+                </select>
+
+                <input type="text" name="card-number" minlength="16" maxlength="16" placeholder="Номер карты" oninput="changeNumber()" required>
+                <input type="text" name="card-fio" placeholder="Имя держателя карты" oninput="changeName()" required>
+                <input type="text" name="card-lifetime" maxlength="5" placeholder="Срок действия карты" oninput="changeLifetime()" required>
+
+                <input type="submit" value="Добавить карту">
+            </form>
+        </div>
+
+
+        <!-- Карточка -->
+        <div class="card">
+            <div class="display-bank-logo">
+                <img src="img/sberbank.svg">
+            </div>
+            
+            <div class="display-card-number">
+                1230123012301230
+            </div>
+
+            <div class="display-lifetime">
+                10/24
+            </div>
+            
+            <div class="display-name">
+                IVANOVA IVANNA
+            </div>
+
+            <div class="display-payment-logo">
+                <img src="img/p-visa.jpg">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Таблица с данными -->
+    <div class="table">
+        <table border="1" cellspacing="0">
+            <tr>
+                <td>Название Банка</td>
+                <td>Плат. Система</td>
+                <td>Номер карты</td>
+                <td>Имя владельца</td>
+                <td>Срок действия</td>
+            </tr>
+            <tr id="emptyTr">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <!-- Скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
